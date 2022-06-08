@@ -48,8 +48,6 @@ public class FileManager {
         deleteSource(path);
     }
 
-    // ======================= //
-
     private static void deleteSource(File file) {
         File[] list = file.listFiles();
         checkNull(list);
@@ -91,7 +89,7 @@ public class FileManager {
         return count;
     }
 
-    private static void writeContent(String to, String content) throws IOException {
+    private void writeContent(String to, String content) throws IOException {
         File path = new File(to);
         OutputStream outputStream = new FileOutputStream(path);
         outputStream.write(Integer.parseInt(content));

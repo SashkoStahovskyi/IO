@@ -1,22 +1,18 @@
-package com.stahocvskiy.fileanalizer;
+package com.stahocvskiy.fileanalyzer;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class FileAnalyzer {
 
-    public static void main(String[] args) throws IOException {
-
-        fileAnalyzer(args);
+    public FileAnalyzer() {
     }
 
-    public static void fileAnalyzer(String[] content) throws IOException {
+    public void analyzer(String[] content) throws IOException {
         File filePath = getInnerPath(content); // get path
         String specifiedWord = getWord(content);  // get word
 
@@ -32,7 +28,7 @@ public class FileAnalyzer {
         System.out.println("All sentence with specified word " + specifiedWord + " ->  " + filterSentence);
     }
 
-    public static File getInnerPath(String[] array) {
+    public File getInnerPath(String[] array) {
         checkArrayIsNotNull(array);
         for (String path : array) {
             return new File(path);
@@ -40,8 +36,8 @@ public class FileAnalyzer {
         return null;
     }
 
-    public static String getWord(String[] args) {
-       checkArrayIsNotNull(args);
+    public String getWord(String[] args) {
+        checkArrayIsNotNull(args);
         for (int i = 0; i < args.length; i++) {
             if (i == 1) {
                 return args[i];
@@ -50,7 +46,7 @@ public class FileAnalyzer {
         return null;
     }
 
-    public static int calculateWord(String word, String content) {
+    public int calculateWord(String word, String content) {
         int count = 0;
         for (int i = 0; i < content.length(); i++) {
             int currentValue = 0;
@@ -64,7 +60,7 @@ public class FileAnalyzer {
         return count;
     }
 
-    public static String readContent(InputStream content, File path) throws IOException {
+    public String readContent(InputStream content, File path) throws IOException {
         byte[] arrayContent = new byte[(int) path.length()];
         int contentValue;
         int index = 0;
@@ -79,7 +75,7 @@ public class FileAnalyzer {
         return new String(arrayContent);
     }
 
-    public static List<String> splitSentence(String content) {
+    public List<String> splitSentence(String content) {
         List<String> list = new ArrayList<>();
         String[] sentence = content.split("\\.|!|\\?");
         for (int i = 0; i < sentence.length - 1; i++) {
@@ -88,25 +84,25 @@ public class FileAnalyzer {
         return list;
     }
 
-    public static List<String> filterSentence(List<String> list, String word) {
-        List<String> result = new ArrayList<>();
-        for (String str : list) {
-            if (str.contains(word)) {
-                result.add(str);
+    public List<String> filterSentence(List<String> list, String word) {
+        List<String> resultList = new ArrayList<>();
+        for (String string : list) {
+            if (string.contains(word)) {
+                resultList.add(string);
             }
         }
-        return result;
+        return resultList;
     }
 
-    private static void checkPathNotNull(File path) {
+    private void checkPathNotNull(File path) {
         if (path == null) {
-            throw new NullPointerException(" Path is not exist ! ");
+            throw new NullPointerException(" Path Is Not Exist ! ");
         }
     }
 
-    private static void checkArrayIsNotNull(String [] array ) {
+    private void checkArrayIsNotNull(String[] array) {
         if (array == null) {
-            throw new NullPointerException (" array is null! ");
+            throw new NullPointerException(" Array Is Null! ");
         }
     }
 }
