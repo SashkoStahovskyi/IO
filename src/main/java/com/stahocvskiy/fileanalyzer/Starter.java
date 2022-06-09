@@ -1,5 +1,4 @@
 package com.stahocvskiy.fileanalyzer;
-
 import java.io.IOException;
 
 public class Starter {

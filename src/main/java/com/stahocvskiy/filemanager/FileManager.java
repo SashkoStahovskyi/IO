@@ -108,7 +108,7 @@ public class FileManager {
 
     private static void checkNull(File[] file) {
         if (file == null) {
-            throw new NullPointerException(" File or dirs not exist  !");
+            throw new NullPointerException(" File or dirs not exist !");
         }
     }
 

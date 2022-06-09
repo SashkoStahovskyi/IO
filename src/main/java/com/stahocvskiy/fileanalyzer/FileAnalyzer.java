@@ -1,5 +1,4 @@
 package com.stahocvskiy.fileanalyzer;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;

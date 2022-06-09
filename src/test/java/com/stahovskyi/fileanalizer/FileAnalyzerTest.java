@@ -5,13 +5,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -27,7 +25,6 @@ public class FileAnalyzerTest {
         fileAnalyzer = new FileAnalyzer();
         path = new File(new File("Fox.txt").getAbsolutePath());
     }
-
 
     @Test
     @DisplayName("test getInnerPath From Array Work Correctly")

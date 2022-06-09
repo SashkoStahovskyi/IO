@@ -1,12 +1,9 @@
 package com.stahovskyi.filemanager;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
-
 import static com.stahocvskiy.filemanager.FileManager.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -94,8 +91,5 @@ public class FileManagerITest {
         assertEquals(0,countSourceAfterMove);
         assertEquals(1,countDestAfterMove);
     }
-
-
-
 }
 
