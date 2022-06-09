@@ -73,7 +73,7 @@ public class FileManagerITest {
         String to = "TestIO\\FolderForCopyFileHere";
         String countDirsFrom = "TestIO";
 
-        assertEquals(6, countDirs(countDirsFrom));
+        assertEquals(7, countDirs(countDirsFrom));
         copy(from, to);
         assertEquals(7, countDirs(countDirsFrom));
     }
