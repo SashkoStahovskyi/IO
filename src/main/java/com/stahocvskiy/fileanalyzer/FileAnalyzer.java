@@ -1,89 +1,75 @@
 package com.stahocvskiy.fileanalyzer;
+
+import com.stahocvskiy.starter.FileStatistics;
+import org.assertj.core.util.VisibleForTesting;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FileAnalyzer {
 
-    public FileAnalyzer() {
-    }
+    private static final Pattern SENTENCE_PATTERN = Pattern.compile("((?<=[.?!]))");
 
-    public void analyzer(String[] content) throws IOException {
-        File filePath = getInnerPath(content); // get path
-        String specifiedWord = getWord(content);  // get word
+    public FileStatistics analyzer(String word, File path) {
 
-        checkPathNotNull(filePath);   // check path to Null before reading
-        InputStream inputStream = new FileInputStream(filePath);   // prepare reading
-        String contentResult = readContent(inputStream, filePath); // read content from path
-
-        int count = calculateWord(specifiedWord, contentResult); // calculate specified word
-        System.out.println("In text " + count + " word " + specifiedWord);
-
-        List<String> splitSentence = splitSentence(contentResult);  // split content to array sentence
-        List<String> filterSentence = filterSentence(splitSentence, specifiedWord);  // filter sentence array
-        System.out.println("All sentence with specified word " + specifiedWord + " ->  " + filterSentence);
-    }
-
-    public File getInnerPath(String[] array) {
-        checkArrayIsNotNull(array);
-        for (String path : array) {
-            return new File(path);
+        if (word == null) {
+            throw new NullPointerException("Provide a valid word !");
         }
-        return null;
-    }
-
-    public String getWord(String[] args) {
-        checkArrayIsNotNull(args);
-        for (int i = 0; i < args.length; i++) {
-            if (i == 1) {
-                return args[i];
-            }
+        if (path == null) {
+            throw new NullPointerException("Provide a valid path !");
         }
-        return null;
+        String contentResult = readContent(path);
+        List<String> sentence = splitIntoSentence(contentResult);
+        List<String> filterSentence = filter(sentence, word);
+        int count = countWord(word, sentence);
+
+        return new FileStatistics(word, filterSentence, count);
     }
 
-    public int calculateWord(String word, String content) {
+    @VisibleForTesting
+    public int countWord(String word, List<String> splitSentence) {
+        Pattern pattern = Pattern.compile("\\b" + word + "\\b");
         int count = 0;
-        for (int i = 0; i < content.length(); i++) {
-            int currentValue = 0;
-            while (currentValue < word.length() && word.charAt(currentValue) == content.charAt(currentValue + i) && i + currentValue < content.length()) {
-                currentValue++;  // algorithm Morrison - Prat
-            }
-            if (currentValue == word.length()) {
+        for (String string : splitSentence) {
+            Matcher matcher = pattern.matcher(string);
+            while (matcher.find()) {
                 count++;
             }
         }
         return count;
     }
 
-    public String readContent(InputStream content, File path) throws IOException {
-        byte[] arrayContent = new byte[(int) path.length()];
-        int contentValue;
-        int index = 0;
-        while (true) {
-            contentValue = content.read();
-            if (contentValue == -1) {
-                break;
-            }
-            arrayContent[index] = (byte) contentValue;
-            index++;
+    @VisibleForTesting
+    public String readContent(File path) {
+        String content;
+        File file = new File(String.valueOf(path));
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            content = new String(fileInputStream.readAllBytes());
+        } catch (IOException exception) {
+            throw new RuntimeException(" Cant Read By Path !");
         }
-        return new String(arrayContent);
+        return content;
     }
 
-    public List<String> splitSentence(String content) {
+    @VisibleForTesting
+    public List<String> splitIntoSentence(String content) {
         List<String> list = new ArrayList<>();
-        String[] sentence = content.split("\\.|!|\\?");
-        for (int i = 0; i < sentence.length - 1; i++) {
-            list.add(sentence[i]);
+        String[] sentences = SENTENCE_PATTERN.split(content);
+        int i = 0;
+        while (i < sentences.length - 1) {
+            list.add(sentences[i]);
+            i++;
         }
         return list;
     }
 
-    public List<String> filterSentence(List<String> list, String word) {
+    @VisibleForTesting
+    public List<String> filter(List<String> list, String word) {
         List<String> resultList = new ArrayList<>();
         for (String string : list) {
             if (string.contains(word)) {
@@ -91,18 +77,6 @@ public class FileAnalyzer {
             }
         }
         return resultList;
-    }
-
-    private void checkPathNotNull(File path) {
-        if (path == null) {
-            throw new NullPointerException(" Path Is Not Exist ! ");
-        }
-    }
-
-    private void checkArrayIsNotNull(String[] array) {
-        if (array == null) {
-            throw new NullPointerException(" Array Is Null! ");
-        }
     }
 }
 

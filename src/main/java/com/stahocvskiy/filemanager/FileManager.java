@@ -1,4 +1,5 @@
 package com.stahocvskiy.filemanager;
+
 import java.io.*;
 
 public class FileManager {
@@ -7,7 +8,7 @@ public class FileManager {
     // возвращает количество файлов в папке и всех подпапках по пути
     public static int countFiles(String path) {
         File filePath = new File(path);
-        int count = 0;
+        int count;
         count = fileCounter(filePath);
         return count;
     }
@@ -16,7 +17,7 @@ public class FileManager {
     // возвращает количество папок в папке и всех подпапках по пути
     public static int countDirs(String path) {
         File filePath = new File(path);
-        int count = 0;
+        int count;
         count = dirsCounter(filePath);
         return count;
     }
@@ -37,7 +38,7 @@ public class FileManager {
                 copyFile(pathFrom, pathTo);
             }
         } catch (Exception e) {
-            throw new IllegalArgumentException("File or directory is not found");
+            throw new IllegalArgumentException(" File or directory is not found ! ");
         }
     }
 
@@ -50,13 +51,14 @@ public class FileManager {
 
     private static void deleteSource(File file) {
         File[] list = file.listFiles();
-        checkNull(list);
-        for (File files : list) {
-            if (files.isDirectory()) {
-                File deleteDir = new File(files + File.separator + files.getName());
-                deleteSource(deleteDir);
+        if (list != null) {
+            for (File files : list) {
+                if (files.isDirectory()) {
+                    File deleteDir = new File(files + File.separator + files.getName());
+                    deleteSource(deleteDir);
+                }
+                files.delete();
             }
-            files.delete();
         }
         file.delete();
     }
@@ -65,11 +67,12 @@ public class FileManager {
         int count = 0;
         int result = 0;
         File[] filePath = path.listFiles();
-        checkNull(filePath);
-        for (File f : filePath) {
-            if (f.isDirectory()) {
-                count++;
-                result += dirsCounter(f);
+        if (filePath != null) {
+            for (File file : filePath) {
+                if (file.isDirectory()) {
+                    count++;
+                    result += dirsCounter(file);
+                }
             }
         }
         return result + count;
@@ -77,38 +80,22 @@ public class FileManager {
 
     private static int fileCounter(File path) {
         int count = 0;
-        File[] file = path.listFiles();
-        checkNull(file);
-        for (File f : file) {
-            if (f.isDirectory()) {
-                count += fileCounter(f);
-            } else if (f.isFile()) {
-                count++;
+        File[] files = path.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    count += fileCounter(file);
+                } else if (file.isFile()) {
+                    count++;
+                }
             }
         }
         return count;
     }
 
-    private void writeContent(String to, String content) throws IOException {
-        File path = new File(to);
-        OutputStream outputStream = new FileOutputStream(path);
-        outputStream.write(Integer.parseInt(content));
-        outputStream.close();
-    }
-
-    public static String readContent(String path) throws IOException {
-        File pathFile = new File(path);
-        InputStream inputStream = new FileInputStream(pathFile);
-        int fileLength = (int) pathFile.length();
-        byte[] array = new byte[fileLength];
-        inputStream.read(array);
-        inputStream.close();
-        return new String(array);
-    }
-
     private static void checkNull(File[] file) {
         if (file == null) {
-            throw new NullPointerException(" File or dirs not exist !");
+            throw new NullPointerException(" File not exist or you don't have permit !");
         }
     }
 

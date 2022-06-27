@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3defef5f-1ea5-4684-ad6b-94dcab28fbd5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/TestIO/DestinationFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/DirForCopy/DirForCopy/SomeFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/DirForCopy/SomeFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/FolderForCopyFileHere/SourceFileForCopy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/SourceFileForCopy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/moveDestination/moveFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestIO/moveSource/FolderForMoveSource/moveFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/fileanalyzer/FileAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/fileanalyzer/FileAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/fileanalyzer/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/starter/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/filemanager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stahocvskiy/filemanager/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stahovskyi/fileanalizer/FileAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stahovskyi/fileanalizer/FileAnalyzerITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stahovskyi/filemanager/FileManagerITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stahovskyi/filemanager/FileManagerITest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="294Fv2ybBTpm1oRyu9TO9byZICQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\FileAnalizerProject\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\FileAnalizerProject\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.FileAnalyzerITest">
+    <configuration name="FileAnalyzerITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FileAnalizerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stahovskyi.fileanalizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stahovskyi.fileanalizer" />
+      <option name="MAIN_CLASS_NAME" value="com.stahovskyi.fileanalizer.FileAnalyzerITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileAnalyzerITest.testAnalyzerAnalyzesTheFileAndFilterContentOnSentenceBySpecifiedSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FileAnalizerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stahovskyi.fileanalizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stahovskyi.fileanalizer" />
+      <option name="MAIN_CLASS_NAME" value="com.stahovskyi.fileanalizer.FileAnalyzerITest" />
+      <option name="METHOD_NAME" value="testAnalyzerAnalyzesTheFileAndFilterContentOnSentenceBySpecifiedSymbols" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileAnalyzerITest.testAnalyzerThrowNullPointerExceptionWhenWordIsNotValidate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FileAnalizerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stahovskyi.fileanalizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stahovskyi.fileanalizer" />
+      <option name="MAIN_CLASS_NAME" value="com.stahovskyi.fileanalizer.FileAnalyzerITest" />
+      <option name="METHOD_NAME" value="testAnalyzerThrowNullPointerExceptionWhenWordIsNotValidate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileAnalyzerITest.testAnalyzerThrowNullPointerExceptionWhenWordIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FileAnalizerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stahovskyi.fileanalizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stahovskyi.fileanalizer" />
+      <option name="MAIN_CLASS_NAME" value="com.stahovskyi.fileanalizer.FileAnalyzerITest" />
+      <option name="METHOD_NAME" value="testAnalyzerThrowNullPointerExceptionWhenWordIsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileAnalyzerITest.testReadContentThrowRuntimeExceptionWhenCantReedContentByPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FileAnalizerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stahovskyi.fileanalizer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stahovskyi.fileanalizer" />
+      <option name="MAIN_CLASS_NAME" value="com.stahovskyi.fileanalizer.FileAnalyzerITest" />
+      <option name="METHOD_NAME" value="testReadContentThrowRuntimeExceptionWhenCantReedContentByPath" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileAnalyzerITest" />
+        <item itemvalue="JUnit.FileAnalyzerITest.testAnalyzerThrowNullPointerExceptionWhenWordIsNull" />
+        <item itemvalue="JUnit.FileAnalyzerITest.testAnalyzerThrowNullPointerExceptionWhenWordIsNotValidate" />
+        <item itemvalue="JUnit.FileAnalyzerITest.testReadContentThrowRuntimeExceptionWhenCantReedContentByPath" />
+        <item itemvalue="JUnit.FileAnalyzerITest.testAnalyzerAnalyzesTheFileAndFilterContentOnSentenceBySpecifiedSymbols" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3defef5f-1ea5-4684-ad6b-94dcab28fbd5" name="Changes" comment="" />
+      <created>1652364677841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652364677841</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
