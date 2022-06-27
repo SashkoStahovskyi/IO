@@ -1,5 +1,4 @@
 package com.stahocvskiy.fileanalyzer;
-
 import com.stahocvskiy.starter.FileStatistics;
 import org.assertj.core.util.VisibleForTesting;
 

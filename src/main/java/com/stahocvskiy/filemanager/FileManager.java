@@ -1,5 +1,4 @@
 package com.stahocvskiy.filemanager;
-
 import java.io.*;
 
 public class FileManager {

@@ -1,5 +1,4 @@
 package com.stahocvskiy.starter;
-
 import java.util.List;
 
 public class FileStatistics {

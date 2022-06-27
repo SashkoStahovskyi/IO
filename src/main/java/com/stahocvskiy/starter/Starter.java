@@ -1,7 +1,6 @@
 package com.stahocvskiy.starter;
 
 import com.stahocvskiy.fileanalyzer.FileAnalyzer;
-
 import java.io.File;
 import java.util.List;
 

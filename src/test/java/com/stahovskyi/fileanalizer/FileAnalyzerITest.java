@@ -1,6 +1,5 @@
 
 package com.stahovskyi.fileanalizer;
-
 import com.stahocvskiy.fileanalyzer.FileAnalyzer;
 import com.stahocvskiy.starter.FileStatistics;
 import org.junit.jupiter.api.Assertions;
